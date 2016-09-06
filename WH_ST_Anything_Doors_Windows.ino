@@ -76,7 +76,7 @@
 #define PIN_6_RESERVED               6  //reserved by ThingShield (possible future use?)
 
 //Window Pins
-#define PIN_CONTACT_LIVINGROOM_WINDOW    4
+//#define PIN_CONTACT_LIVINGROOM_WINDOW    4
 #define PIN_CONTACT_BFSTNOOK_WINDOW      5
 #define PIN_CONTACT_DININGROOM_WINDOW    7
 #define PIN_CONTACT_MASTER_WINDOW1       8
@@ -111,8 +111,8 @@ void setup()
   //           DeviceType Tile name.  
   //******************************************************************************************
  
-  //static st::IS_Motion sensor1(F("motion"), PIN_MOTION, HIGH, false);
-  static st::IS_Contact sensor1(F("livingRoomWindow"), PIN_CONTACT_LIVINGROOM_WINDOW, LOW, true, 500);
+//  static st::IS_Motion sensor1(F("motion"), PIN_MOTION, HIGH, false);
+//  static st::IS_Contact sensor1(F("livingRoomWindow"), PIN_CONTACT_LIVINGROOM_WINDOW, LOW, true, 500);
   static st::IS_Contact sensor2(F("bfstNookWindow"), PIN_CONTACT_BFSTNOOK_WINDOW, LOW, true, 500);
   static st::IS_Contact sensor3(F("diningRoomWindow"), PIN_CONTACT_DININGROOM_WINDOW, LOW, true, 500);
   static st::IS_Contact sensor4(F("masterWindow1"), PIN_CONTACT_MASTER_WINDOW1, LOW, true, 500);
@@ -143,7 +143,7 @@ void setup()
   //*****************************************************************************
   //Add each sensor to the "Everything" Class
   //*****************************************************************************
-  st::Everything::addSensor(&sensor1);
+//  st::Everything::addSensor(&sensor1);
   st::Everything::addSensor(&sensor2);
   st::Everything::addSensor(&sensor3);
   st::Everything::addSensor(&sensor4); 
