@@ -41,7 +41,7 @@ preferences {
     }
 
     section("Select the Windows (Virtual Contact Sensor devices)") {
-        input "livingRoomWindow", title: "Virtual Contact Sensor for Living Room Window", "capability.contactSensor"
+//        input "livingRoomWindow", title: "Virtual Contact Sensor for Living Room Window", "capability.contactSensor"
         input "bfstNookWindow", title: "Virtual Contact Sensor for Breakfast Nook Window", "capability.contactSensor"
         input "diningRoomWindow", title: "Virtual Contact Sensor for Dining Room Window", "capability.contactSensor"
         input "masterwindow1", title: "Virtual Contact Sensor for Master Window 1", "capability.contactSensor"
@@ -83,14 +83,14 @@ def subscribe() {
 //    subscribe(arduino, "garageDoor.open", garageDoorOpen)
 //    subscribe(arduino, "garageDoor.closed", garageDoorClosed)
 
-    subscribe(arduino, "livingRoomWindow.open", kitchenWindow1Open)
-    subscribe(arduino, "livingRoomWindow.closed", kitchenWindow1Closed)
+//    subscribe(arduino, "livingRoomWindow.open", kitchenWindow1Open)
+//    subscribe(arduino, "livingRoomWindow.closed", kitchenWindow1Closed)
 
-    subscribe(arduino, "bfstNookWindow.open", kitchenWindow2Open)
-    subscribe(arduino, "bfstNookWindow.closed", kitchenWindow2Closed)
+    subscribe(arduino, "bfstNookWindow.open", bfstNookWindowOpen)
+    subscribe(arduino, "bfstNookWindow.closed", bfstNookWindowClosed)
 
-    subscribe(arduino, "diningRoomWindow.open", kitchenWindow3Open)
-    subscribe(arduino, "diningRoomWindow.closed", kitchenWindow3Closed)
+    subscribe(arduino, "diningRoomWindow.open", diningRoomWindowOpen)
+    subscribe(arduino, "diningRoomWindow.closed", diningRoomWindowClosed)
 
     subscribe(arduino, "masterWindow1.open", masterWindow1Open)
     subscribe(arduino, "masterWindow1.closed", masterWindow1Closed)
@@ -98,8 +98,8 @@ def subscribe() {
     subscribe(arduino, "masterWindow2.open", masterWindow2Open)
     subscribe(arduino, "masterWindow2.closed", masterWindow2Closed)
 
-    subscribe(arduino, "masterBathWindow.open", officeWindow1Open)
-    subscribe(arduino, "masterBathWindow.closed", officeWindow1Closed)
+    subscribe(arduino, "masterBathWindow.open", masterBathWindowOpen)
+    subscribe(arduino, "masterBathWindow.closed", masterBathWindowClosed)
 
 //    subscribe(arduino, "officeWindow2.open", officeWindow2Open)
 //    subscribe(arduino, "officeWindow2.closed", officeWindow2Closed)
@@ -182,21 +182,21 @@ def subscribe() {
 //}
 
 // --- Living Room Window --- 
-def livingRoomWindowOpen(evt)
-{
-    if (livingRoomWindow.currentValue("contact") != "open") {
-        log.debug "arduinoevent($evt.name: $evt.value: $evt.deviceId)"
-        livingRoomWindow.openme()
-    }
-}
+//def livingRoomWindowOpen(evt)
+//{
+//    if (livingRoomWindow.currentValue("contact") != "open") {
+//        log.debug "arduinoevent($evt.name: $evt.value: $evt.deviceId)"
+//        livingRoomWindow.openme()
+//    }
+//}
 
-def livingRoomWindowClosed(evt)
-{
-    if (livingRoomWindow.currentValue("contact") != "closed") {
-        log.debug "arduinoevent($evt.name: $evt.value: $evt.deviceId)"
-        livingRoomWindow.closeme()
-    }
-}
+//def livingRoomWindowClosed(evt)
+//{
+//    if (livingRoomWindow.currentValue("contact") != "closed") {
+//        log.debug "arduinoevent($evt.name: $evt.value: $evt.deviceId)"
+//        livingRoomWindow.closeme()
+//    }
+//}
 
 // --- Breakfast Nook Window --- 
 def bfstNookWindowOpen(evt)
